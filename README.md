@@ -172,7 +172,7 @@ VOV = 0.2094 V
 
 # circuit
 
-
+![Image description](https://github.com/Prabhu-h7/LIC/blob/main/3.jpeg?raw=true)
 
 
 
