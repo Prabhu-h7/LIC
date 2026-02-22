@@ -202,6 +202,7 @@ VOV = 0.2094 V
 
 
 # DC Analysis
+![Image description](https://github.com/Prabhu-h7/LIC/blob/main/1.jpeg?raw=true)
 
 DC analysis is performed to find the operating point (Q-point) of the PMOS transistor. The DC analysis is performed to ensure that the PMOS transistor is operating in the saturation region. This is required for linear amplification with minimal distortion. The DC analysis is also performed to ensure that the circuit components are properly biased and to check the circuit component stability.
 
@@ -225,6 +226,7 @@ The results are much closer to the theoretical design requirements, ensuring tha
 
 
 # Transient Analysis
+![Image description](https://github.com/Prabhu-h7/LIC/blob/main/2.jpeg?raw=true)
 
 The transient analysis is carried out to analyze the time-domain behavior of the amplifier. This helps in analyzing the signal amplification, phase reversal, distortion, and overall dynamic behavior of the circuit. By performing this analysis, we can check whether the output signal is amplified and phase-reversed correctly with respect to the input signal.
 
@@ -276,6 +278,7 @@ The slight difference between the theoretical and simulated gain values is prima
 
 
 # AC Analysis
+![Image description](https://github.com/Prabhu-h7/LIC/blob/main/4.jpeg?raw=true)
 
 AC analysis is performed to find the frequency response, mid-band gain, bandwidth, and unity gain bandwidth of the amplifier.
 
