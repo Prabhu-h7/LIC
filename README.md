@@ -202,9 +202,10 @@ VOV = 0.2094 V
 
 
 # DC Analysis
-![Image description](https://github.com/Prabhu-h7/LIC/blob/main/1.jpeg?raw=true)
+
 
 DC analysis is performed to find the operating point (Q-point) of the PMOS transistor. The DC analysis is performed to ensure that the PMOS transistor is operating in the saturation region. This is required for linear amplification with minimal distortion. The DC analysis is also performed to ensure that the circuit components are properly biased and to check the circuit component stability.
+![Image description](https://github.com/Prabhu-h7/LIC/blob/main/dc.jpeg)
 
 Initial Simulation Results
 
