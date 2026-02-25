@@ -205,7 +205,8 @@ VOV = 0.2094 V
 
 
 DC analysis is performed to find the operating point (Q-point) of the PMOS transistor. The DC analysis is performed to ensure that the PMOS transistor is operating in the saturation region. This is required for linear amplification with minimal distortion. The DC analysis is also performed to ensure that the circuit components are properly biased and to check the circuit component stability.
-![Image description](https://github.com/Prabhu-h7/LIC/blob/main/dc.jpeg)
+
+![Image description](https://github.com/Prabhu-h7/LIC/blob/main/dc.jpeg?raw=true)
 
 Initial Simulation Results
 
@@ -216,12 +217,12 @@ Vout ≈ 0.359 V
 
 The simulation results were lower than the theoretical values obtained. This difference is due to the practical effects of the devices, such as short-channel effects and carrier mobility reduction, which are not considered in the simulation.
 
-Modified Design (Width Increased to 72 µm)
+Modified Design (Width Increased to 73 µm)
 
 In order to obtain the desired operating point, the width of the transistor was increased to 72 µm. After re-running the DC analysis, the results were:
 
-ID ≈ 247 µA
-Vout ≈ 0.59 V
+ID ≈ 250 µA
+Vout ≈ 0.6 V
 
 The results are much closer to the theoretical design requirements, ensuring that the PMOS transistor is properly biased and is operating in the saturation region.
 
