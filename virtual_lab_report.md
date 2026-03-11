@@ -71,7 +71,14 @@ Converting to nanoampere:
 IB₁ ≈ 51 nA
 ![Image description](https://github.com/Prabhu-h7/LIC/blob/main/p4.png?raw=true)
 
+
+
+
 ![Image description](https://github.com/Prabhu-h7/LIC/blob/main/p5.png?raw=true)
+
+
+
+
 
 ![Image description](https://github.com/Prabhu-h7/LIC/blob/main/p6.png?raw=true)
 
@@ -114,7 +121,13 @@ IB₂ ≈ 42.6 nA
 
 ![Image description](https://github.com/Prabhu-h7/LIC/blob/main/p7.png?raw=true)
 
+
+
+
 ![Image description](https://github.com/Prabhu-h7/LIC/blob/main/p8.png?raw=true)
+
+
+
 
 ![Image description](https://github.com/Prabhu-h7/LIC/blob/main/p9.png?raw=true)
 
@@ -172,9 +185,25 @@ Converted units:
 Iio = 6.38 nA  
 Iio = 0.00638 µA
 ![Image description](https://github.com/Prabhu-h7/LIC/blob/main/p10.png?raw=true)
+
+
+
+
 ![Image description](https://github.com/Prabhu-h7/LIC/blob/main/p11.png?raw=true)
+
+
+
+
+
 ![Image description](https://github.com/Prabhu-h7/LIC/blob/main/p12.png?raw=true)
+
+
+
+
+
 ![Image description](https://github.com/Prabhu-h7/LIC/blob/main/p13.png?raw=true)
+
+
 
 
 
@@ -217,9 +246,25 @@ Converted to millivolts:
 Vio ≈ 1.048 mV
 
 ![Image description](https://github.com/Prabhu-h7/LIC/blob/main/p14.png?raw=true)
+
+
+
+
 ![Image description](https://github.com/Prabhu-h7/LIC/blob/main/p15.png?raw=true)
+
+
+
+
+
 ![Image description](https://github.com/Prabhu-h7/LIC/blob/main/p16.png?raw=true)
+
+
+
+
+
 ![Image description](https://github.com/Prabhu-h7/LIC/blob/main/p17.png?raw=true)
+
+
 
 
 
