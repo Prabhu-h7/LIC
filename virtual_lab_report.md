@@ -34,6 +34,8 @@ A function generator is a type of electronic test equipment used for generating 
 
 ![Image description](https://github.com/Prabhu-h7/LIC/blob/main/p2.png?raw=true)
 
+
+
 IB₁ is the inverting bias current, i.e., the current flowing into the inverting input terminal of the operational amplifier IC.
 
 
@@ -47,11 +49,26 @@ IB₁ is the inverting bias current, i.e., the current flowing into the invertin
 ## Formula
 
 
+
+
+
+
 IB₁ = Vo/Rf
+
+
+
+
+
+
+
+
 ![Image description](https://github.com/Prabhu-h7/LIC/blob/main/p3.png?raw=true)
 
 
+
+
 ## Given Values
+
 
 
 Vo = 0.024 V  
@@ -68,7 +85,14 @@ IB₁ = 5.106 x 10⁻⁸ A
 Converting to nanoampere:
 
 
+
 IB₁ ≈ 51 nA
+
+
+
+
+
+
 ![Image description](https://github.com/Prabhu-h7/LIC/blob/main/p4.png?raw=true)
 
 
@@ -117,7 +141,14 @@ IB₂ = -4.255 * 10^-8 A
 Considering the magnitude:
 
 
+
 IB₂ ≈ 42.6 nA
+
+
+
+
+
+
 
 ![Image description](https://github.com/Prabhu-h7/LIC/blob/main/p7.png?raw=true)
 
@@ -183,7 +214,16 @@ Converted units:
 
 
 Iio = 6.38 nA  
+
 Iio = 0.00638 µA
+
+
+
+
+
+
+
+
 ![Image description](https://github.com/Prabhu-h7/LIC/blob/main/p10.png?raw=true)
 
 
@@ -243,7 +283,14 @@ Vio = 0.001048 V
 Converted to millivolts:
 
 
+
 Vio ≈ 1.048 mV
+
+
+
+
+
+
 
 ![Image description](https://github.com/Prabhu-h7/LIC/blob/main/p14.png?raw=true)
 
