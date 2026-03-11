@@ -29,10 +29,10 @@ A function generator is a type of electronic test equipment used for generating 
 
 
 # Measurement of Inverting Bias Current (IB₁)
-![Image description](PASTE_FILENAME_HERE)
+![Image description](https://github.com/Prabhu-h7/LIC/blob/main/p1.png?raw=true)
 
 
-![Image description](PASTE_FILENAME_HERE)
+![Image description](https://github.com/Prabhu-h7/LIC/blob/main/p2.png?raw=true)
 
 IB₁ is the inverting bias current, i.e., the current flowing into the inverting input terminal of the operational amplifier IC.
 
@@ -48,7 +48,7 @@ IB₁ is the inverting bias current, i.e., the current flowing into the invertin
 
 
 IB₁ = Vo/Rf
-![Image description](PASTE_FILENAME_HERE)
+![Image description](https://github.com/Prabhu-h7/LIC/blob/main/p3.png?raw=true)
 
 
 ## Given Values
@@ -69,11 +69,11 @@ Converting to nanoampere:
 
 
 IB₁ ≈ 51 nA
-![Image description](PASTE_FILENAME_HERE)
+![Image description](https://github.com/Prabhu-h7/LIC/blob/main/p4.png?raw=true)
 
-![Image description](PASTE_FILENAME_HERE)
+![Image description](https://github.com/Prabhu-h7/LIC/blob/main/p5.png?raw=true)
 
-![Image description](PASTE_FILENAME_HERE)
+![Image description](https://github.com/Prabhu-h7/LIC/blob/main/p6.png?raw=true)
 
 
 
@@ -112,11 +112,11 @@ Considering the magnitude:
 
 IB₂ ≈ 42.6 nA
 
-![Image description](PASTE_FILENAME_HERE)
+![Image description](https://github.com/Prabhu-h7/LIC/blob/main/p7.png?raw=true)
 
-![Image description](PASTE_FILENAME_HERE)
+![Image description](https://github.com/Prabhu-h7/LIC/blob/main/p8.png?raw=true)
 
-![Image description](PASTE_FILENAME_HERE)
+![Image description](https://github.com/Prabhu-h7/LIC/blob/main/p9.png?raw=true)
 
 
 # Input Bias Current (IB)
@@ -171,10 +171,10 @@ Converted units:
 
 Iio = 6.38 nA  
 Iio = 0.00638 µA
-![Image description](PASTE_FILENAME_HERE)
-![Image description](PASTE_FILENAME_HERE)
-![Image description](PASTE_FILENAME_HERE)
-![Image description](PASTE_FILENAME_HERE)
+![Image description](https://github.com/Prabhu-h7/LIC/blob/main/p10.png?raw=true)
+![Image description](https://github.com/Prabhu-h7/LIC/blob/main/p11.png?raw=true)
+![Image description](https://github.com/Prabhu-h7/LIC/blob/main/p12.png?raw=true)
+![Image description](https://github.com/Prabhu-h7/LIC/blob/main/p13.png?raw=true)
 
 
 
@@ -216,11 +216,11 @@ Converted to millivolts:
 
 Vio ≈ 1.048 mV
 
-![Image description](PASTE_FILENAME_HERE)
-![Image description](PASTE_FILENAME_HERE)
-![Image description](PASTE_FILENAME_HERE)
-![Image description](PASTE_FILENAME_HERE)
-![Image description](PASTE_FILENAME_HERE)
+![Image description](https://github.com/Prabhu-h7/LIC/blob/main/p14.png?raw=true)
+![Image description](https://github.com/Prabhu-h7/LIC/blob/main/p15.png?raw=true)
+![Image description](https://github.com/Prabhu-h7/LIC/blob/main/p16.png?raw=true)
+![Image description](https://github.com/Prabhu-h7/LIC/blob/main/p17.png?raw=true)
+
 
 
 
