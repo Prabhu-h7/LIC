@@ -108,4 +108,176 @@ The initial width values for the NMOS and PMOS transistors were determined by de
 
 A DC operating point analysis was conducted by entering the following command:
 
+This analysis will also aid in the determination of the steady-state values of the circuit. Node voltages and drain current will be among the values determined.
+
+
+
+### 5. Bias Adjustment
+
+During the simulation, the widths of the transistor were slightly adjusted until the desired operating conditions were met.
+
+The desired operating conditions were:
+
+- Drain current close to 250 µA
+- Output voltage close to 0.8 V
+
+
+
+###  6. Transient Analysis
+
+A small sinusoidal signal was applied to the input.
+
+This analysis will show how the output signal changes with respect to time. 
+
+### 7. AC Small Signal Analysis
+
+AC analysis was performed by setting the AC input magnitude to 1 V and using the command:
+This analysis will yield the frequency response of the amplifier and will be useful in obtaining critical parameters of the amplifier such as the gain and bandwidth.
+
+
+# Design Calculations
+
+## Drain Current Selection
+
+The design value of the drain current was chosen as:
+
+ID = 250 µA
+
+## Source Resistor Calculation
+
+The voltage across the source resistor is assumed to be:
+
+
+VRS = 0.2 V
+
+
+The value of the source resistor is calculated as:
+
+
+RS = VRS / ID
+RS = 0.2 / (250 × 10⁻⁶)
+RS = 800 Ω
+
+
+## Output Voltage
+
+For maximum signal swing, the output voltage is chosen from the middle range.
+
+Vout = VDD/2 + IDRS
+Vout = 0.6 + 0.2
+Vout = 0.8 V
+
+
+## Gate Voltage
+
+For the NMOS transistor:
+
+
+VGS ≈ 0.61 V
+
+
+The source voltage is given by:
+
+
+VS = IDRS
+VS = 0.2 V
+
+
+Therefore, the gate bias voltage is given by:
+
+
+VB1 = VGS + VS
+VB1 = 0.61 + 0.2
+VB1 = 0.81 V
+
+
+## Device Dimensions
+
+After performing theoretical calculations and adjusting the values by means of simulation, the final dimensions of the transistor are as follows:
+
+
+Wn = 30 µm
+Wp = 128.5 µm
+L = 360 nm
+
+# DC Analysis
+The DC analysis is carried out to determine the **Quiescent Point of Operation (Q-point)** of the amplifier. Additionally, it helps us verify that the two MOSFETs are operating in the **Saturation Region**, which is essential for the amplification of the input signal. 
+
+*Image description*
+
+From the LT Spice operating point simulation:
+
+Drain Current:
+
+ID ≈ 250 µA
+
+Output Voltage:
+
+Vout ≈ 0.798 V
+
+The output voltage obtained from the simulation is almost equal to the design output voltage of 0.8 V. This indicates that the biasing of the amplifier is appropriate and the design is working as expected. 
+
+# Transient Analysis
+Image description
+
+The transient analysis is conducted to observe the behavior of the amplifier while the input signal is varied. 
+
+From the simulation waveform:
+
+Maximum Output Voltage:
+
+Vmax = 930.23 mV
+
+Minimum Output Voltage:
+
+Vmin = 634.74 mV
+
+### Output Peak-to-Peak Voltage
+Vout(pp) = Vmax - Vmin  
+
+Vout(pp) = 930.23 - 634.74  
+
+Vout(pp) = 295.49 mV
+
+### Input Peak-to-Peak Voltage
+Vin(pp) = 20 mV
+
+### Voltage Gain
+Av = Vout(pp) / Vin(pp)
+
+Av = 295.49 / 20
+
+Av ≈ 14.77 V/V
+
+### Gain in Decibels
+Gain(dB) = 20 * log10(Av)
+
+Gain ≈ 23.38
+
+# AC Analysis
+
+*Image description*
+
+AC analysis can be utilized in understanding how the gain of an amplifier is affected in terms of frequency.
+
+From the AC plot, we can see that the gain is approximately:
+
+Gain ≈ 23.7 dB
+
+### Converting to Linear Gain
+
+Av = 10^(23.7 / 20)
+
+Av ≈ 15.34
+
+
+
+## Bandwidth
+
+The bandwidth at which the gain is reduced by 3 dB can be determined as:
+
+BW ≈ 15 MHz
+
+*Image description*
+
 
