@@ -485,11 +485,11 @@ It can be noted that the circuit gives basic amplification along with moderate g
 
 # Circuit 03
 
-![Image description](PASTE_FILENAME_HERE)
+![Image description](https://github.com/Prabhu-h7/LIC/blob/main/d3.png?raw=true)
 
 # DC Analysis
 
-![Image description](PASTE_FILENAME_HERE)
+![Image description](https://github.com/Prabhu-h7/LIC/blob/main/dc%20op%20pt%203.png?raw=true)
 
 
 ## Design Calculations
@@ -508,7 +508,7 @@ From the LTspice DC operating point:
 # Transient Analysis Calculations
 
 
-![Image description](PASTE_FILENAME_HERE)
+![Image description](https://github.com/Prabhu-h7/LIC/blob/main/tran%20analysis%203.png?raw=true)
 
 
 From the transient waveform:
@@ -551,7 +551,7 @@ Gain(dB) = 20
 # AC Analysis Calculations
 
 
-![Image description](PASTE_FILENAME_HERE)
+![Image description](https://github.com/Prabhu-h7/LIC/blob/main/ac%20analysis%203.png?raw=true)
 
 From the AC magnitude plot, the midband gain is approximately:
 
