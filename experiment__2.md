@@ -352,11 +352,11 @@ Since the values obtained are close to the results obtained by the simulator, it
 
 # Circuit 02
 
-![Image description](PASTE_FILENAME_HERE)
+![Image description](https://github.com/Prabhu-h7/LIC/blob/main/d4.png?raw=true)
 
 # DC Analysis
 
-![Image description](PASTE_FILENAME_HERE)
+![Image description](https://github.com/Prabhu-h7/LIC/blob/main/dc%20op%20pt%202.png?raw=true)
 
 ## Design Calculations
 
@@ -381,7 +381,7 @@ Vout = Vdd/2 + Vds
 # Transient Analysis Calculations
 
 
-![Image description](PASTE_FILENAME_HERE)
+![Image description](https://github.com/Prabhu-h7/LIC/blob/main/tran%20analysis%202.png?raw=true)
 
 
 
@@ -431,7 +431,7 @@ Gain = -0.86
 
 # AC Analysis Calculations
 
-![Image description](PASTE_FILENAME_HERE)
+![Image description](https://github.com/Prabhu-h7/LIC/blob/main/ac%20analysis%202.png?raw=true)
 
 From the AC magnitude analysis plot, we can conclude that:
 
