@@ -196,7 +196,10 @@ VB1 = 0.81 V
 
 
 ## Device Dimensions
-![Image description](PASTE_FILENAME_HERE)
+
+
+![Image description](https://github.com/Prabhu-h7/LIC/blob/main/d1.png?raw=true)
+
 
 After performing theoretical calculations and adjusting the values by means of simulation, the final dimensions of the transistor are as follows:
 
@@ -206,7 +209,11 @@ Wp = 128.5 µm
 L = 360 nm
 
 # DC Analysis
-![Image description](PASTE_FILENAME_HERE)
+
+
+![Image description](https://github.com/Prabhu-h7/LIC/blob/main/dc%20op%20pt%201.png?raw=true)
+
+
 The DC analysis is carried out to determine the **Quiescent Point of Operation (Q-point)** of the amplifier. Additionally, it helps us verify that the two MOSFETs are operating in the **Saturation Region**, which is essential for the amplification of the input signal. 
 
 
@@ -224,7 +231,10 @@ Vout ≈ 0.798 V
 The output voltage obtained from the simulation is almost equal to the design output voltage of 0.8 V. This indicates that the biasing of the amplifier is appropriate and the design is working as expected. 
 
 # Transient Analysis
-![Image description](PASTE_FILENAME_HERE)
+
+
+![Image description](https://github.com/Prabhu-h7/LIC/blob/main/tran%20graph%201.png?raw=true)
+
 Image description
 
 The transient analysis is conducted to observe the behavior of the amplifier while the input signal is varied. 
@@ -240,6 +250,7 @@ Minimum Output Voltage:
 Vmin = 634.74 mV
 
 ### Output Peak-to-Peak Voltage
+
 Vout(pp) = Vmax - Vmin  
 
 Vout(pp) = 930.23 - 634.74  
@@ -262,6 +273,8 @@ Gain(dB) = 20 * log10(Av)
 Gain ≈ 23.38
 
 # AC Analysis
+
+
 ![Image description](PASTE_FILENAME_HERE)
 
 
@@ -338,6 +351,7 @@ Since the values obtained are close to the results obtained by the simulator, it
 
 
 # Circuit 02
+
 ![Image description](PASTE_FILENAME_HERE)
 
 # DC Analysis
@@ -365,6 +379,8 @@ Vout = Vdd/2 + Vds
 
 
 # Transient Analysis Calculations
+
+
 ![Image description](PASTE_FILENAME_HERE)
 
 
@@ -414,6 +430,7 @@ Gain = -0.86
 
 
 # AC Analysis Calculations
+
 ![Image description](PASTE_FILENAME_HERE)
 
 From the AC magnitude analysis plot, we can conclude that:
@@ -467,9 +484,14 @@ It can be noted that the circuit gives basic amplification along with moderate g
 
 
 # Circuit 03
+
 ![Image description](PASTE_FILENAME_HERE)
 
 # DC Analysis
+
+![Image description](PASTE_FILENAME_HERE)
+
+
 ## Design Calculations
 ### Drain Current
 ID ≈ 250 µA
@@ -484,7 +506,11 @@ From the LTspice DC operating point:
 
 
 # Transient Analysis Calculations
+
+
 ![Image description](PASTE_FILENAME_HERE)
+
+
 From the transient waveform:
 Maximum Output Voltage
 Vmax ≈ 1.00 V
@@ -523,6 +549,8 @@ Gain(dB) = 20
 
 
 # AC Analysis Calculations
+
+
 ![Image description](PASTE_FILENAME_HERE)
 
 From the AC magnitude plot, the midband gain is approximately:
