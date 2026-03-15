@@ -86,7 +86,7 @@ This enables LT Spice to simulate the operation of these MOSFET devices based on
 
 The CMOS amplifier circuit was now created in LT Spice.
 
-- The PMOS transistor is connected to the supply voltage, *VDD*, and acts as the load.  
+- The PMOS transistor is connected to the supply voltage, VDD, and acts as the load.  
 - The NMOS transistor acts as the main amplifying device and is connected with a source resistor.  
 - The output voltage is taken from the drain node of the NMOS transistor.  
 
@@ -275,7 +275,7 @@ Gain ≈ 23.38
 # AC Analysis
 
 
-![Image description](PASTE_FILENAME_HERE)
+![Image description](https://github.com/Prabhu-h7/LIC/blob/main/ac%20analysis%201.png?raw=true)
 
 
 
