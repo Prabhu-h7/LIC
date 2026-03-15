@@ -86,7 +86,7 @@ This enables LT Spice to simulate the operation of these MOSFET devices based on
 
 The CMOS amplifier circuit was now created in LT Spice.
 
-- The **PMOS transistor** is connected to the supply voltage, *VDD*, and acts as the load.  
+- The PMOS transistor is connected to the supply voltage, *VDD*, and acts as the load.  
 - The NMOS transistor acts as the main amplifying device and is connected with a source resistor.  
 - The output voltage is taken from the drain node of the NMOS transistor.  
 
@@ -96,7 +96,7 @@ Appropriate bias voltages are applied to the gate terminals of these transistors
 
 ### 3. Choosing Device Parameters
 
-![Image description](PASTE_FILENAME_HERE)
+
 
 The channel length of both MOS transistors was chosen as:
 
@@ -107,7 +107,6 @@ The initial width values for the NMOS and PMOS transistors were determined by de
 
 
 ### 4. DC Operating Point Analysis
-![Image description](PASTE_FILENAME_HERE)
 
 A DC operating point analysis was conducted by entering the following command:
 
@@ -128,13 +127,13 @@ The desired operating conditions were:
 
 
 ###  6. Transient Analysis
-![Image description](PASTE_FILENAME_HERE)
+
 A small sinusoidal signal was applied to the input.
 
 This analysis will show how the output signal changes with respect to time. 
 
 ### 7. AC Small Signal Analysis
-![Image description](PASTE_FILENAME_HERE)
+
 
 AC analysis was performed by setting the AC input magnitude to 1 V and using the command:
 This analysis will yield the frequency response of the amplifier and will be useful in obtaining critical parameters of the amplifier such as the gain and bandwidth.
@@ -210,7 +209,7 @@ L = 360 nm
 ![Image description](PASTE_FILENAME_HERE)
 The DC analysis is carried out to determine the **Quiescent Point of Operation (Q-point)** of the amplifier. Additionally, it helps us verify that the two MOSFETs are operating in the **Saturation Region**, which is essential for the amplification of the input signal. 
 
-*Image description*
+
 
 From the LT Spice operating point simulation:
 
@@ -288,7 +287,6 @@ The bandwidth at which the gain is reduced by 3 dB can be determined as:
 
 BW ≈ 15 MHz
 
-*Image description*
 
 At this point, the gain drops by 3 dB relative to the midband gain.
 
@@ -331,6 +329,7 @@ The difference between the calculated values and the simulated values is attribu
 
 
 # Inference
+
 From the experiment, it is inferred that the CMOS amplifier with an NMOS transistor and PMOS active load is working properly.  
 The DC analysis was performed to ensure the proper biasing of the circuit. In addition, it was ensured that the transistors were operating in the saturation region.  
 The transient analysis was performed to ensure the amplification of the input signal.  
@@ -339,11 +338,15 @@ Since the values obtained are close to the results obtained by the simulator, it
 
 
 # Circuit 02
-*Image description*
-
+![Image description](PASTE_FILENAME_HERE)
 
 # DC Analysis
+
+![Image description](PASTE_FILENAME_HERE)
+
 ## Design Calculations
+
+
 ### Drain Current
 Based on the LTspice DC operating point:
 ID ≈ 250 µA
@@ -358,13 +361,14 @@ Based on the operating point:
 Vout = Vdd/2 + Vds
 = 0.6 + 0.3
 = 0.9 V
-*Image description*
+
 
 
 # Transient Analysis Calculations
+![Image description](PASTE_FILENAME_HERE)
 
 
-*Image description*
+
 Based on the results obtained:
 Maximum Output Voltage
 Based on the results obtained:
@@ -410,8 +414,7 @@ Gain = -0.86
 
 
 # AC Analysis Calculations
-
-*Image description*
+![Image description](PASTE_FILENAME_HERE)
 
 From the AC magnitude analysis plot, we can conclude that:
 
@@ -430,11 +433,11 @@ Av = 0.906 V/V
 
 Unity gain bandwidth is not applicable to the circuit since the **midband gain is less than 1 (0 dB)**. Hence, the gain never crosses **0 dB** on the frequency response curve.
 
----
+
 
 ## Bandwidth
 
-*Image description*
+
 
 The bandwidth is calculated by using the −3 dB cutoff frequency.
 
@@ -464,7 +467,7 @@ It can be noted that the circuit gives basic amplification along with moderate g
 
 
 # Circuit 03
-*Image description*
+![Image description](PASTE_FILENAME_HERE)
 
 # DC Analysis
 ## Design Calculations
@@ -477,11 +480,11 @@ Vout = Vdd/2 + Vds
 Vout = 0.6 + 0.3
 Vout = 0.9 V
 From the LTspice DC operating point:
-*Image description*
+
 
 
 # Transient Analysis Calculations
-*Image description*
+![Image description](PASTE_FILENAME_HERE)
 From the transient waveform:
 Maximum Output Voltage
 Vmax ≈ 1.00 V
@@ -520,10 +523,11 @@ Gain(dB) = 20
 
 
 # AC Analysis Calculations
+![Image description](PASTE_FILENAME_HERE)
 
-From the AC magnitude plot, the **midband gain** is approximately:
+From the AC magnitude plot, the midband gain is approximately:
 
-*Image description*
+
 
 Gain ≈ 27.7 dB
 
@@ -539,7 +543,7 @@ Av ≈ 24.8 V/V
 
 ## Bandwidth
 
-*Image description*
+
 
 Bandwidth is obtained from the −3 dB cutoff point.
 
