@@ -156,177 +156,288 @@ The DC operating point shows correct biasing.
 Output and source voltages match expected values.  
 Transistors are in saturation.
 
-## Input Common Mode Range  
+## Input Common Mode Range (ICMR)
 
-Minimum:
+The input common-mode range is the range of input voltage for which all the transistors in the circuit remain in saturation and the amplifier works properly.
+
+### Minimum Input Common Mode Voltage
+
+For correct operation, the NMOS transistors must stay ON and in saturation.
+
+Condition:
+
+VGS ≥ VT  
+
+We know:
+
+VGS = VICM − VS  
+
+So,
 
 VICM(min) = VS + VT  
 
-VICM(min) = −0.7 + 0.36 = −0.34 V  
+Substituting values:
 
-Maximum:
+VS = −0.7 V  
+VT = 0.36 V  
+
+VICM(min) = −0.7 + 0.36  
+
+VICM(min) = −0.34 V  
+
+### Maximum Input Common Mode Voltage
+
+For the maximum input voltage, the transistors should still remain in saturation.
+
+Condition:
+
+VDS ≥ VOV  
+
+We know:
+
+VD = 0 V  
+VS = −0.7 V  
+
+So,
+
+VDS = VD − VS = 0 − (−0.7) = 0.7 V  
+
+Now,
 
 VICM(max) = VD + VT  
 
-VICM(max) = 0 + 0.36 = 0.36 V  
+Substituting:
 
-Final:
+VICM(max) = 0 + 0.36  
+
+VICM(max) = 0.36 V  
+
+### Final ICMR
 
 −0.34 V ≤ VICM ≤ 0.36 V  
 
-## Output Common Mode Range  
 
-Maximum:
 
-VOCM(max) = VDD = 0.9 V  
+## Output Common Mode Range (OCMR)
 
-Minimum:
+The output common-mode range is the range of output voltage for which the circuit operates correctly and all transistors remain in saturation.
+
+### Maximum Output Voltage
+
+The maximum output voltage is limited by the supply voltage.
+
+VOCM(max) = VDD  
+
+VOCM(max) = 0.9 V  
+
+### Minimum Output Voltage
+
+To keep the transistor in saturation:
+
+VDS ≥ VOV  
+
+At the boundary:
+
+VD − VS = VOV  
+
+So,
+
+VD = VS + VOV  
+
+Since output is taken at drain:
 
 VOCM(min) = VS + VOV  
 
-VOCM(min) = −0.7 + 0.34 = −0.36 V  
+Substituting values:
 
-Final:
+VS = −0.7 V  
+VOV = 0.34 V  
+
+VOCM(min) = −0.7 + 0.34  
+
+VOCM(min) = −0.36 V  
+
+### Final OCMR
 
 −0.36 V ≤ VOCM ≤ 0.9 V  
 
-## Linear Input Range  
 
-|vid| ≤ 2VOV  
+## Transient Analysis and Linearity
 
-|vid| ≤ 0.68 V  
+We use transient analysis to check whether the differential amplifier is working linearly or not.
 
-## Transient Analysis  
+### Condition for Linearity
 
-### Case 1 (Linear)
+|Vid| < 2VOV  
 
-vid = 100 mV  
+2VOV = 2 × 0.34 = 0.68 V  
 
-Output is sinusoidal  
-No distortion  
-Both transistors in saturation  
 
-### Case 2 (Non-linear)
 
-vid = 600 mV  
+### Case 1: Linear Region
+![Image description](https://github.com/Prabhu-h7/LIC/blob/main/d.a%20dc%20circuit.png)
 
-Output is distorted  
-Clipping occurs  
-One transistor turns OFF  
-
-## Conclusion from Transient  
-
-Small input → linear behavior  
-Large input → distortion  
-
-## Gain Calculation  
 
 Input:
 
-Vin(pp) = 100 mV  
+Vid = 100 mV < 0.68 V  
 
-Output:
+Observation:
+
+Output waveform is smooth and sinusoidal  
+No distortion is seen  
+Both MOSFETs are in saturation  
+Amplifier behaves properly (linear)  
+
+
+
+### Case 2: Near Non-Linear Region
+![Image description](https://github.com/Prabhu-h7/LIC/blob/main/d.a__dc%20op%20pt.png)
+
+
+Input:
+
+Vid = 600 mV (close to 0.68 V limit)  
+
+Observation:
+
+Output waveform shows slight distortion  
+Clipping starts appearing  
+One transistor begins moving towards cutoff  
+Gain is no longer perfectly constant  
+
+
+
+### Explanation
+
+When input is small, both transistors share current equally.  
+So output is clean and proportional.
+
+When input increases, current shifts more to one side.  
+Because of this, distortion starts appearing.
+
+
+
+### Conclusion
+
+The amplifier works linearly only for small inputs.
+
+|Vid| < 2VOV  
+
+As input approaches or crosses this limit, the circuit becomes non-linear.
+
+
+
+## Simulated Gain
+
+Input signal:
+
+Type: Sine wave  
+Frequency = 1 kHz  
+Amplitude = 50 mV  
+DC Offset = 0 V  
+
+Measured values:
+
+Vin(pp) = 100 mV  
 
 Vout(pp) ≈ 550 mV  
 
+Voltage Gain:
+
+Av = Vout / Vin  
+
 Av ≈ 5.5  
 
-Gain(dB) ≈ 14.8 dB  
+Gain in dB:
 
-## Theoretical Gain  
+Av(dB) ≈ 20 log(5.5) ≈ 14.8 dB  
 
-ro = 1 / (λ ID) ≈ 16.39 kΩ  
+
+
+## Theoretical Gain
+
+Assume:
+
+λ = 0.1 V⁻¹  
+
+### Output Resistance
+
+ro = 1 / (λ ID)  
+
+ID = 0.61 mA  
+
+ro ≈ 16.39 kΩ  
+
+Effective output resistance:
 
 ro_eff ≈ 8.2 kΩ  
 
-gm = 2ID / VOV ≈ 3.59 mS  
 
-Rout = RD || ro  
+
+### Transconductance
+
+gm = 2ID / VOV  
+
+gm ≈ 3.59 mS  
+
+
+
+### Total Output Resistance
+
+Rout = RD || ro_eff  
+
+RD ≈ 1.475 kΩ  
 
 Rout ≈ 1.25 kΩ  
+
+
+
+### Differential Gain
 
 Ad = gm × Rout  
 
 Ad ≈ 4.49  
 
-Gain ≈ 13.05 dB  
+Gain in dB:
 
-## Reason for Difference  
+Ad(dB) ≈ 13.05 dB  
 
-Difference happens because:
 
-Channel length modulation  
-Finite output resistance  
-Mobility reduction  
-Variation in VOV  
-Parasitic capacitances  
-Measurement errors  
 
-## AC Analysis  
+## Why Theoretical and Simulated Gain Are Different
+![Image description](https://github.com/Prabhu-h7/LIC/blob/main/d.a__dc%20op%20pt.png)
 
-Midband gain:
 
-Av ≈ 10 dB  
+There is always a small difference between calculated and simulated results.
 
-−3 dB level:
+### Reasons
 
-≈ 7 dB  
+Channel length modulation changes output resistance  
 
-Lower cutoff:
+MOSFETs have finite output resistance  
 
-fL = 0  
+Mobility degradation reduces gm  
 
-Upper cutoff:
+Small variations in VOV change operating point  
 
-fH ≈ 4.5 MHz  
+Parasitic capacitances affect response  
 
-Bandwidth:
+Measurement from waveform may not be perfectly accurate  
 
-BW ≈ 4.5 MHz  
 
-## Unity Gain Bandwidth  
 
-UGB = Av × BW  
+## Final Conclusion
 
-UGB ≈ 5.5 × 4.5  
+The amplifier shows linear behavior only for small signals.
 
-UGB ≈ 24.75 MHz  
+Theoretical gain assumes ideal conditions.  
+Simulation includes real effects.
 
-## Comparison  
+So, some difference between both values is expected and completely normal.
 
-Voltage Gain:
 
-Theoretical ≈ 4.49  
-Simulated ≈ 5.5  
 
-Gain(dB):
-
-Theoretical ≈ 13.05 dB  
-Simulated ≈ 14.8 dB  
-
-## Inference  
-
-The differential amplifier with resistive load is designed successfully.
-
-Power limit is satisfied:
-
-P ≤ 2.2 mW  
-
-Current splits equally:
-
-ID1 = ID2 ≈ 0.61 mA  
-
-Biasing is proper and both transistors work in saturation.
-
-Simulation and theory values are close.
-
-Gain is around 5.5 V/V  
-Bandwidth ≈ few MHz  
-
-Small signal gives good amplification.  
-Large signal causes distortion.
-
-The circuit works correctly and meets the design requirements.
 
 
 
