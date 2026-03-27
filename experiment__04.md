@@ -588,7 +588,7 @@ When input increases beyond linear range, distortion appears.
 Overall, the circuit satisfies the design requirements and performs as expected.
 
 
-## Circuit 2 : Differential Amplifier with Resistive Load
+## Circuit 2 :
 
 
 
