@@ -44,8 +44,7 @@ The gain in the circuit varies for different types of loads. The gain is highest
 
 
 # Circuit 1: Differential Amplifier with Resistive Load  
-![Image description](https://github.com/Prabhu-h7/LIC/blob/main/circuit%201%20da.png)
-![Image description](https://github.com/Prabhu-h7/LIC/blob/main/DA_dc_1.png)
+
 ## Working  
 
 This circuit uses two NMOS transistors with resistors at the drain.
@@ -130,8 +129,7 @@ Condition:
 
 VDS > VOV  
 
-0.7 > 0.34 → Saturation satisfied  
-
+0.7 > 0.34 → Saturation satisfied
 ### Width Calculation  
 
 ID = (1/2) μnCox (W/L) (VOV)²  
@@ -149,6 +147,10 @@ W ≈ 32 µm (approx)
 Reason: practical effects like channel length modulation and mobility changes.
 
 ## DC Analysis  
+  
+![Image description](https://github.com/Prabhu-h7/LIC/blob/main/d.a%20dc%20circuit.png)
+![Image description](https://github.com/Prabhu-h7/LIC/blob/main/d.a__dc%20op%20pt.png)
+
 
 The DC operating point shows correct biasing.  
 Output and source voltages match expected values.  
