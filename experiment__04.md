@@ -427,7 +427,7 @@ Measurement from waveform may not be perfectly accurate
 
 
 
-## Final Conclusion
+##  Conclusion
 
 The amplifier shows linear behavior only for small signals.
 
@@ -435,6 +435,157 @@ Theoretical gain assumes ideal conditions.
 Simulation includes real effects.
 
 So, some difference between both values is expected and completely normal.
+
+
+## AC Analysis
+![Image description](https://github.com/Prabhu-h7/LIC/blob/main/ac%20d.a.png)
+
+
+
+In AC analysis, the frequency response of the differential amplifier is studied using a Bode plot.
+
+The midband gain is taken from the flat portion of the gain curve.  
+The bandwidth is defined between the lower cutoff frequency (fL) and upper cutoff frequency (fH) at −3 dB points.
+
+
+
+### Midband Gain
+
+From AC simulation:
+
+Av ≈ 14.8 dB  
+
+The −3 dB gain is:
+
+Av(-3 dB) = 14.8 − 3  
+
+Av(-3 dB) ≈ 11.8 dB  
+
+
+
+### Cutoff Frequencies
+
+Lower cutoff frequency:
+
+fL ≈ 0 Hz  
+
+Upper cutoff frequency:
+
+fH ≈ 4.819 MHz  
+
+
+### Bandwidth
+
+BW = fH − fL  
+
+BW ≈ 4.819 MHz  
+
+
+
+## Unity Gain Bandwidth (UGB)
+
+Since the 0 dB crossing is not clearly visible, UGB is estimated using:
+
+UGB = Av × BW  
+
+Av ≈ 5.5  
+
+UGB ≈ 5.5 × 4.819 MHz  
+
+UGB ≈ 26.5 MHz  
+
+
+
+## Comparison of Results
+
+Parameter            Theoretical        Simulated  
+Voltage Gain (Av)    ≈ 4.49 V/V         ≈ 5.5 V/V  
+Gain (dB)            ≈ 13.05 dB         ≈ 14.8 dB  
+
+
+
+## Reason for Difference
+
+The difference between theoretical and simulated results is due to practical effects.
+
+Channel length modulation changes output resistance  
+
+Finite output resistance affects gain  
+
+Mobility degradation reduces transconductance  
+
+Parasitic capacitances affect high-frequency response  
+
+Operating point variations slightly change VOV  
+
+
+
+## Inference
+
+The MOS differential amplifier with resistive load is successfully designed and analyzed.
+
+### Design Constraints
+
+Power consumption ≤ 2.2 mW  
+VDD = 0.9 V  
+VSS = −0.9 V  
+VOCM = 0 V  
+
+
+### Biasing Details
+
+The tail current is chosen as:
+
+Itail ≈ 1.22 mA  
+
+So that:
+
+ID1 = ID2 ≈ 0.61 mA  
+
+The source voltage is adjusted to:
+
+VS ≈ −0.7 V  
+
+This ensures both MOSFETs operate in saturation.
+
+
+
+### Performance Summary
+
+Theoretical gain ≈ 4.49 V/V (13.05 dB)  
+Simulated gain ≈ 5.5 V/V (14.8 dB)  
+
+Bandwidth ≈ 4.819 MHz  
+
+Unity Gain Bandwidth ≈ 26.5 MHz  
+
+
+
+### Frequency Response Observation
+
+The amplifier shows a flat gain in midband region.  
+
+At higher frequencies, gain decreases due to parasitic capacitances.  
+
+This introduces a dominant pole and limits bandwidth.
+
+
+
+### Conclusion
+
+The differential amplifier works correctly under given constraints.
+
+It provides:
+
+Good linear amplification for small signals  
+
+Expected gain close to theoretical value  
+
+Proper frequency response  
+
+When input increases beyond linear range, distortion appears.  
+
+Overall, the circuit satisfies the design requirements and performs as expected.
 
 
 
