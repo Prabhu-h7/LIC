@@ -275,7 +275,7 @@ We use transient analysis to check whether the differential amplifier is working
 
 
 ### Case 1: Linear Region
-![Image description](https://github.com/Prabhu-h7/LIC/blob/main/d.a%20dc%20circuit.png)
+![Image description](https://github.com/Prabhu-h7/LIC/blob/main/tran%20d.a.1.png)
 
 
 Input:
@@ -292,7 +292,7 @@ Amplifier behaves properly (linear)
 
 
 ### Case 2: Near Non-Linear Region
-![Image description](https://github.com/Prabhu-h7/LIC/blob/main/d.a__dc%20op%20pt.png)
+![Image description](https://github.com/Prabhu-h7/LIC/blob/main/tran%20non%20linear%20d.a%201.png)
 
 
 Input:
