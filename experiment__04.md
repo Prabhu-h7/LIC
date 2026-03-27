@@ -44,8 +44,8 @@ The gain in the circuit varies for different types of loads. The gain is highest
 
 
 # Circuit 1: Differential Amplifier with Resistive Load  
-![Image description](PASTE_FILENAME_HERE)
-![Image description](PASTE_FILENAME_HERE)
+![Image description](https://github.com/Prabhu-h7/LIC/blob/main/circuit%201%20da.png)
+![Image description](https://github.com/Prabhu-h7/LIC/blob/main/DA_dc_1.png)
 ## Working  
 
 This circuit uses two NMOS transistors with resistors at the drain.
