@@ -406,7 +406,7 @@ Ad(dB) ≈ 13.05 dB
 
 
 ## Why Theoretical and Simulated Gain Are Different
-![Image description](https://github.com/Prabhu-h7/LIC/blob/main/d.a__dc%20op%20pt.png)
+![Image description]()
 
 
 There is always a small difference between calculated and simulated results.
