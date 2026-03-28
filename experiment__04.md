@@ -593,6 +593,156 @@ Overall, the circuit satisfies the design requirements and performs as expected.
 
 ## Circuit 2 :
 
+# Differential Amplifier Design (Circuit 2)
+
+## Given Parameters
+
+Technology: TSMC 180 nm  
+Supply Voltage VDD = +0.9 V  
+Negative Supply VSS = −0.9 V  
+Power Constraint P ≤ 2.2 mW  
+Channel Length L = 540 nm  
+
+
+
+## Design Objective
+
+To design a CMOS differential amplifier satisfying:
+
+- Tail current ISS ≈ 1.22 mA  
+- Source node voltage Vp ≈ −0.7 V  
+- All MOSFETs operating in saturation region  
+
+
+
+## Current Calculation
+
+From power constraint:
+
+P = VDD × ISS  
+
+ISS = P / VDD  
+
+ISS = 2.2 mW / 1.8 V  
+
+ISS ≈ 1.22 mA  
+
+
+
+## Transistor Dimensions
+
+### Input Differential Pair
+
+M1:
+W = 36 µm  
+L = 540 nm  
+
+M2:
+W = 36 µm  
+L = 540 nm  
+
+
+
+### Tail Current Source
+
+M5:
+W = 228 µm  
+L = 540 nm  
+
+
+
+## Biasing Condition
+
+Gate voltage of M5 is adjusted such that:
+
+Vp ≈ −0.7 V  
+
+This ensures proper biasing and saturation of M5.
+
+
+
+## DC Operating Point Analysis
+
+![Image description](https://github.com/Prabhu-h7/LIC/blob/main/Screenshot%202026-03-28%20194919.png)
+
+
+Expected results:
+
+
+
+Tail current:
+ISS ≈ 1.22 mA  
+
+Current through each branch:
+ID1 = ID2 ≈ 0.61 mA  
+
+Node voltage:
+Vp ≈ −0.7 V  
+
+Output nodes:
+Vout1 ≈ Vout2 (symmetrical under zero differential input)
+
+
+
+## Condition for Linearity
+
+|Vid| < √(2 × Vov)
+
+Where Vov is the overdrive voltage of input transistors.
+
+
+
+## Region of Operation
+
+For proper operation:
+
+- M1, M2 must be in saturation  
+- M5 must be in saturation  
+
+Saturation condition:
+
+VDS ≥ VGS − Vth  
+
+
+
+## Design Insight
+
+- M5 controls the tail current ISS  
+- Increasing W5 increases ISS  
+- M1 and M2 control transconductance and gain  
+- Proper bias ensures symmetrical operation  
+
+
+
+## Final Design Summary
+
+Channel Length for all MOSFETs:
+L = 540 nm  
+
+M1, M2:
+W = 36 µm  
+
+M5:
+W = 228 µm  
+
+Tail Current:
+ISS ≈ 1.22 mA  
+
+Source Voltage:
+Vp ≈ −0.7 V  
+
+
+
+## Conclusion
+
+The differential amplifier is successfully designed to meet:
+
+- Power constraint ≤ 2.2 mW  
+- Tail current ≈ 1.22 mA  
+- Proper biasing with Vp ≈ −0.7 V  
+
+The circuit operates in saturation and provides balanced differential operation.
+
 
 
 
