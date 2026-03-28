@@ -976,7 +976,7 @@ v_id = 100 mV < 0.34 V
 
 ## Case 2: Non-Linear Region
 
-![Image description](https://1drv.ms/i/c/CD2818949B358913/IQCtnz1LTobjQpysXTzZwfjiATXb1wKJwrZ1so3xJfHi4mU?e=GxyHTt)
+![Image description](https://github.com/Prabhu-h7/LIC/blob/main/Screenshot%202026-03-28%20201705.png)
 
 
 **Input applied:**
