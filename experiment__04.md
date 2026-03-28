@@ -1478,7 +1478,7 @@ P = 1.8 × 1.22
 
 ## Circuit 3: CMOS Differential Amplifier with PMOS Active Load
 
-
+ ![Image description](https://github.com/Prabhu-h7/LIC/blob/main/Screenshot%202026-03-28%20231038.png)
 
 
 ## Power Constraint Verification
