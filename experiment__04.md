@@ -268,9 +268,9 @@ We use transient analysis to check whether the differential amplifier is working
 
 ### Condition for Linearity
 
-|Vid| < 2VOV  
+|Vid| < √2 VOV 
 
-2VOV = 2 × 0.34 = 0.68 V  
+
 
 
 
@@ -292,6 +292,9 @@ Amplifier behaves properly (linear)
 
 
 ### Case 2: Near Non-Linear Region
+
+|Vid| > √2 VOV
+
 ![Image description](https://github.com/Prabhu-h7/LIC/blob/main/Screenshot%202026-03-28%20180841.png?raw=true)
 
 
@@ -438,7 +441,7 @@ So, some difference between both values is expected and completely normal.
 
 
 ## AC Analysis
-![Image description](https://github.com/Prabhu-h7/LIC/blob/main/ac%20d.a.png)
+![Image description](https://github.com/Prabhu-h7/LIC/blob/main/Screenshot%202026-03-28%20190127.png)
 
 
 
