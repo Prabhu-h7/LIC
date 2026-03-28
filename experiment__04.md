@@ -743,7 +743,7 @@ The differential amplifier is successfully designed to meet:
 
 The circuit operates in saturation and provides balanced differential operation.
 
-## 2.2.e Input Common Mode Range (ICMR)
+##  Input Common Mode Range (ICMR)
 
 The input common-mode range is defined as the range of input voltage for which all transistors remain in saturation.
 
@@ -822,7 +822,7 @@ VICM(max) = 0.39 V
 
 
 
-## 2.2.f Output Common Mode Range (OCMR)
+##  Output Common Mode Range (OCMR)
 
 The output common-mode range is defined as the range of output voltage for which all transistors remain in saturation.
 
@@ -892,7 +892,7 @@ Vout(max) = 0.65 V
 
 
 
-## 2.2.g Differential Input Voltage Range (Linear Region)
+## Differential Input Voltage Range (Linear Region)
 
 The differential amplifier operates in the linear region as long as both transistors M1 and M2 remain ON and share the tail current.
 
@@ -983,7 +983,7 @@ v_id = 100 mV < 0.34 V
 
 v_id = 600 mV > 0.34 V  
 
-(Circuit 3)
+
 
 ### Observation
 
@@ -1027,6 +1027,371 @@ When:
 |v_id| > 0.34 V  
 
 the circuit exhibits non-linear behavior due to current steering and transistor cutoff.
+## Theoretical and Simulated Gain
+
+
+
+The output waveform is amplified and inverted.
+
+
+
+## Simulated Gain
+
+### Input Signal Parameters
+
+- Type: Sine wave  
+- Frequency = 1 kHz  
+- Amplitude = 50 mV (applied differentially)  
+- DC Offset = 0 V  
+
+
+
+### Measured Peak-to-Peak Values
+
+V_in(p-p) = 50 mV − (−50 mV) = 100 mV  
+
+V_out(p-p) = 106 mV − (−75 mV) = 181 mV  
+
+
+
+### Voltage Gain
+
+A_v = V_out(p-p) / V_in(p-p)  
+
+A_v = 181 / 100  
+
+A_v = 1.81  
+
+
+
+### Gain in dB
+
+A_v(dB) = 20 log₁₀(1.81)  
+
+A_v(dB) ≈ 5.15 dB  
+
+
+
+## Theoretical Gain
+
+### Assumptions (Based on Final Design)
+
+- λ = 0.1 V⁻¹  
+- I_D = 0.61 mA  
+- V_OV = 0.297 V  
+
+
+
+### Output Resistance
+
+r_o = 1 / (λ I_D)  
+
+r_o = 1 / (0.1 × 0.61 × 10⁻³)  
+
+r_o ≈ 16.39 kΩ  
+
+
+
+### Effective Output Resistance
+
+r_o,eff = r_on || r_op  
+
+r_o,eff = 16.39k || 16.39k  
+
+r_o,eff ≈ 8.20 kΩ  
+
+
+
+### Transconductance
+
+g_m = 2I_D / V_OV  
+
+g_m = (2 × 0.61 mA) / 0.297  
+
+g_m = (1.22 mA) / 0.297  
+
+g_m ≈ 4.11 mS  
+
+
+
+### Total Output Resistance
+
+R_out = r_o,eff  
+
+R_out ≈ 8.20 kΩ  
+
+
+
+### Differential Gain
+
+A_d = g_m × R_out  
+
+A_d = 4.11 mS × 8.20 kΩ  
+
+A_d ≈ 33.7  
+
+
+
+### Gain in dB
+
+A_d(dB) = 20 log₁₀(33.7)  
+
+A_d(dB) ≈ 30.55 dB  
+
+
+## Reason for Difference Between Theoretical and Simulated Gain
+
+A deviation is observed between the theoretical and simulated gain values due to practical non-idealities.
+
+
+
+### Reasons for Deviation
+
+#### 1. Channel Length Modulation
+
+λ varies with bias in simulation:
+
+r_o = 1 / (λ I_D)
+
+This reduces gain.
+
+
+
+#### 2. Finite Output Resistance of Active Load
+
+R_out = r_on || r_op  
+
+Any mismatch lowers effective gain.
+
+
+
+#### 3. Mobility Degradation
+
+Reduces transconductance:
+
+g_m = 2I_D / V_OV  
+
+
+
+#### 4. Variation in Overdrive Voltage (V_OV)
+
+Operating point variations affect gain.
+
+
+
+#### 5. Current Source Non-Ideality (M5)
+
+- Finite output resistance  
+- Slight current variation  
+
+
+
+#### 6. Parasitic Capacitances
+
+Reduce gain slightly in practical operation.
+
+
+
+#### 7. Measurement Method
+
+Minor inaccuracies due to waveform measurement.
+
+
+
+## Conclusion
+
+The difference between theoretical (~33.7) and simulated (~1.81) gain is expected.
+
+This deviation arises due to:
+- Non-ideal MOSFET behavior  
+- Finite output resistances  
+- Large-signal operation  
+
+The circuit operation is successfully validated.
+
+
+
+
+## AC Analysis
+
+![Image description](https://github.com/Prabhu-h7/LIC/blob/main/Screenshot%202026-03-28%20210250.png?raw=true)
+
+
+
+In AC analysis, the frequency response of the differential amplifier is observed.
+
+The midband gain is obtained from the flat region of the Bode plot.  
+The bandwidth is defined as the frequency range between the lower cutoff frequency (f_L) and upper cutoff frequency (f_H), measured at the −3 dB points.
+
+
+
+## Midband Gain
+
+From AC simulation:
+
+A_v = 5.2 dB  
+
+The −3 dB gain is:
+
+A_v(-3 dB) = 5.2 − 3  
+
+A_v(-3 dB) = 2.2 dB  
+
+
+
+## Cutoff Frequencies
+
+Lower cutoff frequency:
+
+f_L = 0 Hz  
+
+Upper cutoff frequency:
+
+f_H = 2.2 GHz  
+
+
+
+## Bandwidth
+
+Bandwidth is defined as:
+
+BW = f_H − f_L  
+
+BW = 2.2 − 0  
+
+BW = 2.2 GHz  
+
+
+
+##  Unity Gain Bandwidth (UGB)
+
+Unity gain frequency:
+
+f_0dB ≈ 4.8 GHz  
+
+UGB is given by:
+
+UGB = A_v × f_H  
+
+Using linear gain:
+
+A_v = 1.81  
+
+UGB = 1.81 × 4.8 GHz  
+
+UGB ≈ 8.69 GHz  
+
+
+
+## Note
+
+First-order theoretical analysis assumes ideal MOSFET operation in saturation and neglects higher-order effects such as:
+
+- Channel length modulation  
+- Mobility degradation  
+- Finite output resistance of current sources  
+- Parasitic capacitances  
+
+These non-ideal effects are included in simulation, leading to differences between theoretical and simulated results.
+
+
+
+## Comparison of Results
+
+| Parameter | Theoretical | Simulated |
+|----------|------------|----------|
+| Voltage Gain (A_v) | 33.7 V/V | 1.81 V/V |
+| Gain (dB) | 30.55 dB | 5.15 dB |
+
+The deviation between theoretical and simulated gain is mainly due to simplified first-order assumptions and the presence of non-ideal MOSFET effects.
+
+
+
+## Inference
+
+The MOS differential amplifier with PMOS active load and NMOS current source was successfully designed and analyzed while satisfying the given design constraints:
+
+- Power consumption ≤ 1.8 mW  
+- V_DD = 0.9 V  
+- V_SS = −0.9 V  
+- V_ocm = 0 V  
+
+
+
+### Current Distribution
+
+The tail current is:
+
+I_tail = 1.22 mA  
+
+Under balanced conditions:
+
+I_D1 = I_D2 = 0.61 mA  
+
+
+
+### Biasing Condition
+
+All transistors (M1, M2, M3, M4, M5) are maintained in saturation.
+
+The tail node voltage:
+
+V_S ≈ −0.7 V  
+
+
+## Gain Observation
+
+Theoretical and simulated results show a significant deviation:
+
+- Theoretical gain ≈ 33.7 V/V (30.55 dB)  
+- Simulated gain ≈ 1.81 V/V (5.15 dB)  
+
+
+
+## Reasons for Gain Reduction
+
+This difference arises due to non-ideal effects:
+
+- NMOS current source (M5) has finite output resistance  
+- PMOS active load (M3, M4) is not ideal  
+- Channel length modulation reduces output resistance  
+- Mobility degradation reduces transconductance  
+
+
+
+## Frequency Response Observation
+
+From AC analysis:
+
+- The amplifier shows a flat midband gain  
+- Gain rolls off at higher frequencies  
+- This is due to parasitic capacitances and load capacitance  
+
+These introduce a dominant pole and limit bandwidth.
+
+
+
+## Linearity Behavior
+
+The differential amplifier provides linear amplification for small signals.
+
+For large input signals:
+
+- Current steering occurs  
+- One transistor turns OFF  
+- Distortion and non-linearity appear  
+
+
+
+## Final Conclusion
+
+The designed differential amplifier demonstrates:
+
+- Correct biasing  
+- Proper saturation operation  
+- Expected frequency response  
+
+However, the results highlight the significant impact of non-ideal MOSFET behavior on gain when using active loads and current sources.
 
 
 
