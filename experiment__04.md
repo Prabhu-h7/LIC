@@ -1398,3 +1398,247 @@ However, the results highlight the significant impact of non-ideal MOSFET behavi
 
 
 
+
+
+
+
+
+
+
+
+
+## Circuit 3: CMOS Differential Amplifier with PMOS Active Load (Bias-Controlled Load)
+
+
+
+## Working Principle
+
+The circuit consists of two matched NMOS transistors (M1 and M2) forming a differential pair, with their sources connected together and biased by a constant tail current source (M5). The drains of M1 and M2 are connected to PMOS transistors (M3 and M4), which act as active loads.
+
+The gates of the PMOS transistors are connected to a bias voltage Vb2, ensuring they operate as current sources.
+
+When a differential input is applied:
+
+v_id = v_in1 − v_in2
+
+the tail current ISS is steered between M1 and M2:
+
+- If v_in1 > v_in2 → M1 carries more current  
+- If v_in2 > v_in1 → M2 carries more current  
+
+The PMOS load converts current variation into output voltage, providing high gain.
+
+
+
+## Design Calculations
+
+### GIVEN PARAMETERS
+
+- Technology: TSMC 180nm  
+- VDD = +0.9 V  
+- VSS = −0.9 V  
+- Power ≤ 2.2 mW  
+- L (M1, M2) = **540 nm**  
+- Vin,CM = 0 V  
+- Vo,CM = 0 V  
+- Vp = −0.7 V  
+- CL = 10 pF  
+- VT ≈ 0.36 V  
+
+
+
+## Power Constraint
+
+P = (VDD − VSS) × ISS  
+
+= 1.8 × ISS  
+
+Given:
+
+P ≤ 2.2 mW  
+
+ISS ≤ 2.2 / 1.8  
+
+ ISS ≤ 1.22 mA  
+
+Choose:
+
+ ISS = **1.22 mA**
+
+Power:
+
+P = 1.8 × 1.22  
+
+ P = **2.196 mW** 
+
+
+
+## Drain Current Calculation
+
+Under balanced condition:
+
+ID1 = ID2 = ISS / 2  
+
+ID1 = ID2 = 1.22 / 2  
+
+ ID1 = ID2 = **0.61 mA**
+
+
+
+##  Bias Point Calculation
+
+### NMOS Differential Pair (M1, M2)
+
+VG = 0 V  
+VS = −0.7 V  
+
+VGS = 0 − (−0.7) = 0.7 V  
+
+ Given design:
+
+VOV = **0.297 V**
+
+Check:
+
+VGS − VT = 0.7 − 0.36 = 0.34 V ≈ 0.297 V  
+
+VD = 0 V  
+
+VDS = 0 − (−0.7) = 0.7 V  
+
+Saturation:
+
+0.7 > 0.297 
+
+
+
+### NMOS Current Source (M5)
+
+VS = −0.9 V  
+VD = −0.7 V  
+
+VDS = 0.2 V  
+
+Choose:
+
+VOV5 ≈ 0.2 V  
+
+VGS = 0.36 + 0.2 = 0.56 V  
+
+VG = −0.9 + 0.56  
+
+ VG = −0.34 V  
+
+Saturation:
+
+0.2 ≥ 0.2 
+
+
+
+### PMOS Active Load (M3, M4)
+
+VS = 0.9 V  
+VD = 0 V  
+
+VSD = 0.9 V  
+
+Choose:
+
+Vb2 ≈ −0.36 V  
+
+VSG = 0.9 − (−0.36)  
+
+ VSG = 1.26 V  
+
+VOVp = 1.26 − 0.39  
+
+ VOVp = 0.87 V  
+
+Check:
+
+0.9 > 0.87 
+
+
+## Final Bias Summary
+
+All transistors operate in saturation.
+
+
+
+## 3.2.d Width Calculation
+
+Formula:
+
+ID = (1/2) μCox (W/L) VOV²  
+
+W = (2ID L) / (μCox VOV²)
+
+
+
+### NMOS (M1, M2)
+
+ID = 0.61 mA  
+L = 540 nm  
+VOV = 0.297 V  
+
+W = (2 × 0.61×10⁻³ × 540×10⁻⁹) / (2.365×10⁻⁴ × (0.297)²)
+
+W = 658.8×10⁻¹² / 2.087×10⁻⁵  
+
+ W ≈ **31.6 µm**
+
+
+
+### NMOS Current Source (M5)
+
+ID = 1.22 mA  
+L = 540 nm  
+VOV = 0.2 V  
+
+W5 = (2 × 1.22×10⁻³ × 540×10⁻⁹) / (2.365×10⁻⁴ × (0.2)²)
+
+W5 = 1.317×10⁻⁹ / 9.46×10⁻⁶  
+
+ W5 ≈ **139.2 µm**
+
+
+
+### PMOS (M3, M4)
+
+ID = 0.61 mA  
+L = 540 nm  
+VOVp = 0.87 V  
+
+W = (2 × 0.61×10⁻³ × 540×10⁻⁹) / (9.98×10⁻⁵ × (0.87)²)
+
+W = 658.8×10⁻¹² / 7.55×10⁻⁵  
+
+W ≈ **8.72 µm**
+
+
+## Final Design Values
+
+| Transistor | Width |
+|----------|--------|
+| M1, M2 | 31.6 µm |
+| M3, M4 | 8.72 µm |
+| M5 | 139.2 µm |
+
+
+
+## Final Conclusion
+
+The CMOS differential amplifier is successfully designed with:
+
+- ISS = 1.22 mA  
+- Power = 2.196 mW (within limit)  
+- L = 540 nm (as per design constraint)  
+- All MOSFETs in saturation  
+
+The circuit satisfies all given constraints and achieves proper differential amplification with PMOS active load.
+
+
+
+
+
+
