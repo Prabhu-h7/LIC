@@ -663,7 +663,7 @@ This ensures proper biasing and saturation of M5.
 
 ## DC Operating Point Analysis
 
-![Image description](https://github.com/Prabhu-h7/LIC/blob/main/Screenshot%202026-03-28%20194919.png)
+![Image description](https://github.com/Prabhu-h7/LIC/blob/main/Screenshot%202026-03-28%20201112.png)
 
 
 Expected results:
@@ -742,6 +742,291 @@ The differential amplifier is successfully designed to meet:
 - Proper biasing with Vp ≈ −0.7 V  
 
 The circuit operates in saturation and provides balanced differential operation.
+
+## 2.2.e Input Common Mode Range (ICMR)
+
+The input common-mode range is defined as the range of input voltage for which all transistors remain in saturation.
+
+### Minimum Input Common Mode Voltage
+
+For proper operation:
+- NMOS transistors M1 and M2 must remain ON  
+- Tail current source M5 must remain in saturation  
+
+Condition:
+
+VGS1 ≥ VT  
+
+Using:
+
+VGS1 = VICM − VS  
+
+So,
+
+VICM(min) = VS + VT  
+
+Substituting:
+
+VS = −0.7 V  
+VT = 0.36 V  
+
+VICM(min) = −0.7 + 0.36  
+
+VICM(min) = −0.34 V  
+
+
+
+### Maximum Input Common Mode Voltage
+
+For proper operation:
+- PMOS transistors M3 and M4 must remain in saturation  
+
+Condition:
+
+VSD ≥ VOVp  
+
+Using:
+
+VSD = VDD − VD  
+
+At saturation boundary:
+
+VSD = VSG − |VTP|  
+
+Also:
+
+VSG = VDD − VICM  
+
+So,
+
+VDD − VD = (VDD − VICM) − |VTP|  
+
+Rearranging:
+
+VICM(max) = VD + |VTP|  
+
+Substiting:
+
+VD ≈ 0 V  
+|VTP| ≈ 0.39 V  
+
+VICM(max) = 0 + 0.39  
+
+VICM(max) = 0.39 V  
+
+
+
+### Final Input Common Mode Range
+
+−0.34 V ≤ VICM ≤ 0.39 V  
+
+
+
+## 2.2.f Output Common Mode Range (OCMR)
+
+The output common-mode range is defined as the range of output voltage for which all transistors remain in saturation.
+
+### Minimum Output Common Mode Voltage
+
+For proper operation:
+- NMOS transistors M1 and M2 must remain in saturation  
+
+Condition:
+
+VDS1 ≥ VOVn  
+
+Using:
+
+VDS1 = Vout − VS  
+
+So,
+
+Vout(min) − VS ≥ VOVn  
+
+Vout(min) ≥ VS + VOVn  
+
+Substituting:
+
+VS = −0.7 V  
+VOVn = 0.34 V  
+
+Vout(min) = −0.7 + 0.34  
+
+Vout(min) = −0.36 V  
+
+
+
+### Maximum Output Common Mode Voltage
+
+For proper operation:
+- PMOS transistors M3 and M4 must remain in saturation  
+
+Condition:
+
+VSD ≥ VOVp  
+
+Using:
+
+VSD = VDD − Vout  
+
+So,
+
+VDD − Vout(max) ≥ VOVp  
+
+Vout(max) ≤ VDD − VOVp  
+
+Substituting:
+
+VDD = 0.9 V  
+VOVp ≈ 0.25 V  
+
+Vout(max) = 0.9 − 0.25  
+
+Vout(max) = 0.65 V  
+
+
+
+### Final Output Common Mode Range
+
+−0.36 V ≤ Vout ≤ 0.65 V  
+
+
+
+## 2.2.g Differential Input Voltage Range (Linear Region)
+
+The differential amplifier operates in the linear region as long as both transistors M1 and M2 remain ON and share the tail current.
+
+The differential input voltage is defined as:
+
+vid = vin1 − vin2  
+
+
+
+### Condition for Linear Operation
+
+- Both transistors must remain ON  
+- Tail current must be shared between M1 and M2  
+- One transistor should not turn OFF  
+
+
+
+### Maximum Differential Input Voltage
+
+At the boundary of linear operation:
+
+vid(max) = 2 VOVn  
+
+Substituting:
+
+VOVn = 0.34 V  
+
+vid(max) = 2 × 0.34  
+
+vid(max) = 0.68 V  
+
+
+
+### Final Differential Input Range
+
+−0.68 V ≤ vid ≤ 0.68 V  
+
+## 2.3 Transient Analysis and Linearity Observation
+
+
+The linear behavior of the differential amplifier with PMOS active load is verified using transient analysis.
+
+
+
+### Condition for Linearity
+
+The amplifier operates linearly when:
+
+|v_id| < √2 · V_OV
+
+Using:
+
+V_OV = 0.24 V  
+
+So,
+
+√2 · V_OV = 1.414 × 0.24 = 0.339 V ≈ 0.34 V
+
+
+
+## Case 1: Linear Region
+
+![Image description](https://github.com/Prabhu-h7/LIC/blob/main/Screenshot%202026-03-28%20201327.png)
+
+
+**Input applied:**
+
+v_id = 100 mV < 0.34 V  
+
+(Circuit 2)
+
+### Observation
+
+- Output waveform is sinusoidal  
+- No distortion observed  
+- Both NMOS transistors (M1, M2) operate in saturation  
+- PMOS load transistors (M3, M4) remain in saturation  
+- Amplifier behaves linearly  
+
+
+
+## Case 2: Non-Linear Region
+
+![Image description](https://1drv.ms/i/c/CD2818949B358913/IQCtnz1LTobjQpysXTzZwfjiATXb1wKJwrZ1so3xJfHi4mU?e=GxyHTt)
+
+
+**Input applied:**
+
+v_id = 600 mV > 0.34 V  
+
+(Circuit 3)
+
+### Observation
+
+- Output waveform shows distortion and clipping  
+- One transistor (M1 or M2) enters cutoff  
+- Current is steered completely to one branch  
+- PMOS load still operates, but amplification becomes non-linear  
+
+
+
+## Comparison Table
+
+| Parameter | Case 1: Linear Region | Case 2: Non-Linear Region |
+|----------|----------------------|--------------------------|
+| Condition | v_id < √2 V_OV | v_id > √2 V_OV |
+| Input (v_id) | 100 mV | 600 mV |
+| Output waveform | Sinusoidal | Distorted / Clipped |
+| Gain | Constant | Reduced / Non-linear |
+| Transistor operation | All in saturation | One NMOS in cutoff |
+| Current distribution | Shared between M1 & M2 | Current flows in one branch |
+
+
+
+## Interpretation
+
+In the linear region, the differential input is small and both NMOS transistors conduct simultaneously.  
+The tail current is shared between the two branches, resulting in a proportional and undistorted output.
+
+In the non-linear region, the differential input exceeds the limit (√2 V_OV), causing one transistor to carry almost the entire tail current while the other turns OFF. This leads to distortion and loss of linearity.
+
+
+
+## Conclusion
+
+The differential amplifier operates linearly only for small input signals:
+
+|v_id| < √2 · V_OV ≈ 0.34 V  
+
+When:
+
+|v_id| > 0.34 V  
+
+the circuit exhibits non-linear behavior due to current steering and transistor cutoff.
 
 
 
